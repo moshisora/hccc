@@ -1,0 +1,41 @@
+.class-single { display: block; }
+
+.class-single-1 .class-single-2 { display: block; }
+
+.class-multi {
+    display: blcok;
+}
+
+.class-multi-1 .class-multi-2 {
+    display: block;
+}
+
+.class-multi-3
+{
+    display: block;
+}
+
+.class-complex-1 .class-complex-2 { display: block;
+    margin: 8px;
+    padding: 8px;
+}
+
+img div.class-tag-before {
+    display: inline;
+}
+
+.class-tag-after div {
+    display: inline;
+}
+
+.class-before::before {
+	display: inline;
+}
+
+.class-after::after {
+	display: inline;
+}
+
+div .class-id#id {
+	display: inline;
+}

@@ -34,8 +34,7 @@ func main() {
 		showUsage()
 	}
 
-	hccc.SearchHTMLClasses(htmlPath)
-	hccc.SearchCSSClasses(cssPath)
+	hccc.Run(htmlPath, cssPath)
 
 	fmt.Println("finish")
 }

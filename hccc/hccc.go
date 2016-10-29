@@ -1,35 +1,15 @@
 package hccc
 
-import (
-	"bufio"
-	"fmt"
-	"log"
-	"os"
-)
-
-var p = Parser{}
-
-// SearchHTMLClasses - search classes in given html files
-func SearchHTMLClasses(path string) {
-	fmt.Println("search html classes")
-	fmt.Printf("html: %s\n", path)
-
-	f, err := os.Open(path)
-	if err != nil {
-		log.Fatal("[error] can't open html file", err)
-	}
-
-	scanner := bufio.NewScanner(f)
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-	}
-	if err := scanner.Err(); err != nil {
-		log.Fatal("[error] can't read html file", err)
-	}
+// List : class lists
+type List struct {
+	classListHTML []string
+	classListCSS  []string
 }
 
-// SearchCSSClasses - search classes in given style files
-func SearchCSSClasses(path string) {
-	fmt.Println("search css classes")
-	fmt.Printf("css : %s\n", path)
+var list = List{}
+
+// Run - Main Process
+func Run(htmlPath, cssPath string) {
+	searchHTMLClass(htmlPath)
+	searchCSSClass(cssPath)
 }
