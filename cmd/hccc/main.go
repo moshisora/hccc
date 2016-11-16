@@ -38,8 +38,6 @@ func main() {
 	}
 
 	hccc.Run(htmlPath, cssPath)
-
-	fmt.Println("finish")
 }
 
 func printVersion() {
