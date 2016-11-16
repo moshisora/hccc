@@ -8,30 +8,33 @@ import (
 	"github.com/moshisora/hccc/hccc"
 )
 
-var version string
+var (
+	version   string
+	buildDate string
+)
 
 func main() {
 	var (
-		help     bool
-		version  bool
-		htmlPath string
-		cssPath  string
+		help        bool
+		showVersion bool
+		htmlPath    string
+		cssPath     string
 	)
 
 	flag.BoolVar(&help, "help", false, "show help message")
-	flag.BoolVar(&version, "v", false, "show varsion")
-	flag.BoolVar(&version, "version", false, "show version")
+	flag.BoolVar(&showVersion, "v", false, "show varsion")
+	flag.BoolVar(&showVersion, "version", false, "show version")
 	flag.StringVar(&htmlPath, "h", "", "html/template files to search classes")
 	flag.StringVar(&htmlPath, "html", "", "html/template files to search classes")
 	flag.StringVar(&cssPath, "c", "", "css/style files to search classes")
 	flag.StringVar(&cssPath, "css", "", "css/style files to search classes")
 	flag.Parse()
 
-	if version {
-		showVersion()
+	if showVersion {
+		printVersion()
 	}
 	if help {
-		showUsage()
+		printUsage()
 	}
 
 	hccc.Run(htmlPath, cssPath)
@@ -39,12 +42,13 @@ func main() {
 	fmt.Println("finish")
 }
 
-func showVersion() {
-	fmt.Println("version:", version)
+func printVersion() {
+	fmt.Println("version: ", version)
+	fmt.Println("build date: ", buildDate)
 	os.Exit(0)
 }
 
-func showUsage() {
+func printUsage() {
 	fmt.Println("usage")
 	flag.PrintDefaults()
 	os.Exit(1)
