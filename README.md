@@ -7,7 +7,7 @@ command line tools to find undefined or not used classes in html/css file.
 ### Install
 
 ```
-$ go get github.com/moshisota/hccc
+$ go get github.com/moshisora/hccc
 ```
 
 ### Run and Options
