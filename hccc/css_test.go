@@ -6,7 +6,9 @@ import (
 )
 
 func TestSearchCSSClass(t *testing.T) {
-	searchCSSClass("./testdata/test.css")
+	list.classListCSS = []string{}
+
+	searchCSSClass("./testdata/list.css")
 
 	s := []string{
 		"class-single",

@@ -6,7 +6,9 @@ import (
 )
 
 func TestSearchHTMLClass(t *testing.T) {
-	searchHTMLClass("./testdata/test.html")
+	list.classListHTML = []string{}
+
+	searchHTMLClass("./testdata/list.html")
 
 	s := []string{
 		"main",

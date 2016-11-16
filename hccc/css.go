@@ -69,8 +69,6 @@ func searchCSSClass(path string) {
 			s = s[:fp]
 		}
 
-		fmt.Println(s)
-
 		for _, as := range strings.Split(s, ".") {
 			if len(as) == 0 {
 				continue
@@ -78,4 +76,6 @@ func searchCSSClass(path string) {
 			list.classListCSS = append(list.classListCSS, as)
 		}
 	}
+
+	fmt.Println(list.classListCSS)
 }
