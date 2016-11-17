@@ -5,6 +5,27 @@ import (
 	"testing"
 )
 
+func TestSetClasses(t *testing.T) {
+	list.html = []string{}
+	list.css = []string{}
+
+	setClasses("./testdata/html", "./testdata/css")
+
+	expect := []string{
+		"class-1",
+		"class-2",
+		"class-3",
+		"class-4",
+	}
+
+	if !reflect.DeepEqual(expect, list.html) {
+		t.Error("error")
+	}
+	if !reflect.DeepEqual(expect, list.css) {
+		t.Error("error")
+	}
+}
+
 func TestCompare(t *testing.T) {
 	list.html = []string{}
 	list.css = []string{}

@@ -15,9 +15,7 @@ var list = ClassList{}
 
 // Run - Main Process
 func Run(htmlPath, cssPath string) {
-	searchHTMLClass(htmlPath)
-	searchCSSClass(cssPath)
-
+	setClasses(htmlPath, cssPath)
 	hc, cc := compare()
 
 	fmt.Println(color("classes used in html but undefined in css", "yellow"))
@@ -28,6 +26,18 @@ func Run(htmlPath, cssPath string) {
 	fmt.Println(color("classes defined in css but not used in html", "yellow"))
 	for _, c := range cc {
 		fmt.Println(c)
+	}
+}
+
+func setClasses(htmlPath, cssPath string) {
+	hps := generatePaths(htmlPath)
+	cps := generatePaths(cssPath)
+
+	for _, p := range hps {
+		searchHTMLClass(p)
+	}
+	for _, p := range cps {
+		searchCSSClass(p)
 	}
 }
 

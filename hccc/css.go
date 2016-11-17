@@ -2,7 +2,6 @@ package hccc
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -10,8 +9,6 @@ import (
 
 // searchCSSClass - search classes in given style files
 func searchCSSClass(path string) {
-	fmt.Printf("\ncss : %s\n", path)
-
 	f, err := os.Open(path)
 	if err != nil {
 		log.Fatal("[error] can't open css file", err)
