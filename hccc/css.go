@@ -73,9 +73,7 @@ func searchCSSClass(path string) {
 			if len(as) == 0 {
 				continue
 			}
-			list.classListCSS = append(list.classListCSS, as)
+			list.css = append(list.css, as)
 		}
 	}
-
-	fmt.Println(list.classListCSS)
 }

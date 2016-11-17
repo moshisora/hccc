@@ -5,13 +5,13 @@ import (
 	"strings"
 )
 
-// List : class lists
-type List struct {
-	classListHTML []string
-	classListCSS  []string
+// ClassList : class lists
+type ClassList struct {
+	html []string
+	css  []string
 }
 
-var list = List{}
+var list = ClassList{}
 
 // Run - Main Process
 func Run(htmlPath, cssPath string) {
@@ -32,21 +32,21 @@ func Run(htmlPath, cssPath string) {
 }
 
 func compare() ([]string, []string) {
-	hc := strings.Join(list.classListHTML, " ")
-	cc := strings.Join(list.classListCSS, " ")
+	hc := strings.Join(list.html, " ")
+	cc := strings.Join(list.css, " ")
 
 	var (
 		hcf []string
 		ccf []string
 	)
 
-	for _, h := range list.classListHTML {
+	for _, h := range list.html {
 		if !strings.Contains(cc, h) {
 			hcf = append(hcf, h)
 		}
 	}
 
-	for _, c := range list.classListCSS {
+	for _, c := range list.css {
 		if !strings.Contains(hc, c) {
 			ccf = append(ccf, c)
 		}

@@ -36,9 +36,7 @@ func searchHTMLClass(path string) {
 		classes := s[1][:i]
 
 		for _, c := range strings.Split(classes, " ") {
-			list.classListHTML = append(list.classListHTML, c)
+			list.html = append(list.html, c)
 		}
 	}
-
-	fmt.Println(list.classListHTML)
 }

@@ -6,7 +6,7 @@ import (
 )
 
 func TestSearchHTMLClass(t *testing.T) {
-	list.classListHTML = []string{}
+	list.html = []string{}
 
 	searchHTMLClass("./testdata/list.html")
 
@@ -19,7 +19,7 @@ func TestSearchHTMLClass(t *testing.T) {
 		"content__text",
 	}
 
-	if !reflect.DeepEqual(s, list.classListHTML) {
+	if !reflect.DeepEqual(s, list.html) {
 		t.Error("error")
 	}
 }

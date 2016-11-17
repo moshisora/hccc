@@ -6,7 +6,7 @@ import (
 )
 
 func TestSearchCSSClass(t *testing.T) {
-	list.classListCSS = []string{}
+	list.css = []string{}
 
 	searchCSSClass("./testdata/list.css")
 
@@ -27,7 +27,7 @@ func TestSearchCSSClass(t *testing.T) {
 		"class-id",
 	}
 
-	if !reflect.DeepEqual(s, list.classListCSS) {
+	if !reflect.DeepEqual(s, list.css) {
 		t.Error("error")
 	}
 }

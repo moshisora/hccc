@@ -6,8 +6,8 @@ import (
 )
 
 func TestCompare(t *testing.T) {
-	list.classListHTML = []string{}
-	list.classListCSS = []string{}
+	list.html = []string{}
+	list.css = []string{}
 
 	searchHTMLClass("./testdata/compare.html")
 	searchCSSClass("./testdata/compare.css")
