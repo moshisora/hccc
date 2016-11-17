@@ -22,10 +22,16 @@ func Run(htmlPath, cssPath string) {
 	for _, h := range hc {
 		fmt.Println(h)
 	}
+	if len(hc) == 0 {
+		fmt.Println("(nothing)")
+	}
 
 	fmt.Println(color("classes defined in css but not used in html", "yellow"))
 	for _, c := range cc {
 		fmt.Println(c)
+	}
+	if len(cc) == 0 {
+		fmt.Println("(nothing)")
 	}
 }
 
