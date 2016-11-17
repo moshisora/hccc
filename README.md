@@ -1,6 +1,6 @@
 ## hccc
 
-command line tools to find undefined or not used classes in html/css file.
+command line tool to find undefined or not used classes in html/css file.
 
 ## Usage
 
@@ -13,11 +13,15 @@ $ go get github.com/moshisora/hccc
 ### Run and Options
 
 ```
-$ hccc -h path/to/html_file -c path/to/css_file
+$ hccc -h path/to/html -c path/to/css
 ```
 
-* `-h` `-html`: Path to the HTML file you want to check
-* `-c` `-css`: Path to the CSS file you want to check
+* `-h` `-html`: Path to the HTML files you want to check
+    - Select a file or directory
+	- If a directory is selected, hccc use included files recursively
+* `-c` `-css`: Path to the CSS files you want to check
+    - Select a file or directory
+	- If a directory is selected, hccc use included files recursively
 * `-v`: show version
 * `-help`: show help
 
